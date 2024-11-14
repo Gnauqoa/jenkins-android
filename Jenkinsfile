@@ -23,7 +23,7 @@ pipeline {
     post {
         success {
             // Archive the specific APK file after a successful build
-            archiveArtifacts allowEmptyArchive: true, artifacts: '**/*.apk', followSymlinks: false
+            archiveArtifacts allowEmptyArchive: true, artifacts: '**/build/*.apk', followSymlinks: false
         }
         always {
             cleanWs()
