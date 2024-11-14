@@ -2,9 +2,7 @@ pipeline {
     agent {
         docker { image 'cimg/android:2023.09.1' }
     }
-    environment {
 
-    }
     stages {
         stage('Setup') {
           steps {
