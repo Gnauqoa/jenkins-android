@@ -12,9 +12,8 @@ pipeline {
         stage('Build') {
             steps {
                 sh './gradlew build'
+                archiveArtifacts allowEmptyArchive: true, artifacts: 'app/build/outputs/apk/debug/app-debug.apk', followSymlinks: false
             }
-
-            archiveArtifacts allowEmptyArchive: true, artifacts: 'app/build/outputs/apk/debug/app-debug.apk', followSymlinks: false
         }
         stage('Run tests') {
             steps {
